@@ -1,0 +1,18 @@
+[package]
+name = "tcpra-pf-ffi"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+sha2 = "0.10.9"
+sm2 = { version = "0.13.3", features = ["dsa"] }
+serde = { version = "1.0", features = ["derive"] }
+hex = "0.4.3"
+
+[profile.release]
+lto = true
+panic = "abort"
